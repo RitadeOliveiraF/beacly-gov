@@ -59,7 +59,7 @@ export default function Heatmap() {
       }
       const L = (window as any).L
       const map = L.map(mapRef.current).setView([38.5, -28.3], 10)
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+      L.tileLayer(`https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=${process.env.NEXT_PUBLIC_CARTO_KEY}`, {
         attribution: "© CartoDB",
         maxZoom: 18
       }).addTo(map)
