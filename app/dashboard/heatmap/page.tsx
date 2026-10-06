@@ -59,9 +59,9 @@ export default function Heatmap() {
       }
       const L = (window as any).L
       const map = L.map(mapRef.current).setView([38.5, -28.3], 10)
-      L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
-        attribution: "© Esri",
-        maxZoom: 18, maxNativeZoom: 16
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+        attribution: "© CartoDB",
+        maxZoom: 18
       }).addTo(map)
 
       spaces.forEach(s => {
